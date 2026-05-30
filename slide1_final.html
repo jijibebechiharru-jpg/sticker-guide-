@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自宅でできる大人のシール作り</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: #4a3b32;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(142, 122, 153, 0.15);
+            padding: 40px;
+            border: 1px solid rgba(230, 210, 240, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '🌸';
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 100px;
+            opacity: 0.05;
+        }
+
+        .header-zone {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px dashed #e0cfe6;
+            padding-bottom: 30px;
+        }
+
+        .main-title {
+            font-size: 1.8rem;
+            color: #6b4e71;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .sub-title {
+            font-size: 1.2rem;
+            color: #c47b94;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .steps-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+
+        .step-card {
+            flex: 1;
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px solid #f2ecf5;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: #d6badb;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -18px;
+            left: 20px;
+            background: linear-gradient(135deg, #c47b94 0%, #906b9c 100%);
+            color: white;
+            font-weight: bold;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(144, 107, 156, 0.3);
+        }
+
+        .step-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #4a3b32;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            min-height: 50px;
+        }
+
+        .speech-bubble {
+            background: #fdf7f9;
+            border-left: 4px solid #c47b94;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5a4b51;
+            margin-bottom: 12px;
+        }
+
+        .step-note {
+            font-size: 0.85rem;
+            color: #8c7b83;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .etsy-link {
+            color: #d7652c;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px dotted #d7652c;
+        }
+        .etsy-link:hover { color: #b04d1e; }
+
+        .merit-banner {
+            background: linear-gradient(135deg, #f6f0f8 0%, #fdf5f7 100%);
+            border: 1px solid #e8daed;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 45px;
+            font-weight: bold;
+            color: #6b4e71;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .prompt-section {
+            background: #faf8fb;
+            border: 2px dashed #c47b94;
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .prompt-section-title {
+            text-align: center;
+            font-weight: bold;
+            color: #c47b94;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+        }
+
+        .prompt-box {
+            background: #ffffff;
+            border: 1px solid #e0cfe6;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #333;
+            white-space: pre-wrap;
+            word-break: break-word;
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .copy-btn {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #906b9c 0%, #6b4e71 100%);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(107, 78, 113, 0.3);
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(107, 78, 113, 0.2);
+            opacity: 0.95;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(50, 40, 55, 0.9);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+            opacity: 0;
+            z-index: 9999;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 15px 10px; }
+            .container { padding: 20px 15px; }
+            .main-title { font-size: 1.4rem; }
+            .sub-title { font-size: 1rem; }
+            .steps-wrapper { flex-direction: column; gap: 35px; }
+            .step-card { padding: 20px 15px; }
+            .step-title { min-height: auto; }
+            .cta-section { padding: 30px 20px; }
+            .cta-heading { font-size: 1.15rem; }
+            .line-img-placeholder { width: 120px; height: 120px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="header-zone">
+        <div class="main-title">絵心がなくても大丈夫！自宅でできる大人のシール作り🌸</div>
+        <div class="sub-title">新しい趣味に、AIを使った「ステッカー販売」を始めてみませんか？</div>
+    </div>
+
+    <div class="steps-wrapper">
+        
+        <div class="step-card">
+            <div class="step-number">STEP 1</div>
+            <div class="step-title">✨ ChatGPTにプロンプトを入れる</div>
+            <div class="speech-bubble">「下のプロンプトをそのまま貼り付けるだけ！」</div>
+            <div class="step-note">一瞬で最高に素敵なイラストが完成。干支や季節に合わせたデザインも自由自在です。</div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">STEP 2</div>
+            <div class="step-title">✍️ 商品説明文もAIにおまかせ</div>
+            <div class="speech-bubble">こうお願いするだけ！<br><strong>「このステッカーが高値で売れる説明文を作って」</strong></div>
+            <div class="step-note">AIが自動で魅力的な文章を考えてくれるので、文章が苦手な方でも安心です。</div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">STEP 3</div>
+            <div class="step-title">🛒 Etsyに出品して完了！</div>
+            <div class="speech-bubble">
+                URLから登録：<br>
+                <a href="https://www.etsy.com/" target="_blank" class="etsy-link">Etsy（https://www.etsy.com/）</a>
+            </div>
+            <div class="step-note">あとは商品を出品するだけ！ショップがあなたの代わりに24時間自動で販売してくれます。</div>
+        </div>
+
+    </div>
+
+    <div class="merit-banner">
+        💡 データ販売だから、在庫で部屋が散らかる心配も、郵便局に行く手間も一切不要です！
+    </div>
+
+    <div class="prompt-section">
+        <div class="prompt-section-title">＊ 今回のステッカーデザインのプロンプトはこちら ＊</div>
+        <div class="prompt-box" id="promptText">A premium 4-piece die-cut sticker collection inspired by crystal botany.
+
+A lush Monstera leaf emerging from a natural amethyst cluster.
+A graceful eucalyptus stem wrapped around a clear quartz crystal point.
+A soft watercolor rose blooming inside a faceted geometric prism.
+A sprig of lavender tied together with a tiny iridescent moonstone.
+Style: dreamy watercolor washes, fine ink detailing, gentle pastel shimmer accents. Finished with thick white sticker borders. High resolution, individually isolated on a white background, boutique quality stickers.</div>
+        
+        <button class="copy-btn" onclick="copyPrompt()">📋 プロンプトをコピーする</button>
+    </div>
+
+
+
+
+</div>
+
+<div class="toast" id="toastMessage">✨ コピーしました！そのままChatGPTに貼ってください</div>
+
+<script>
+    function copyPrompt() {
+        const promptText = document.getElementById('promptText').innerText;
+        navigator.clipboard.writeText(promptText).then(() => {
+            const toast = document.getElementById('toastMessage');
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 2500);
+        }).catch(err => {
+            alert('コピーに失敗しました。手動で選択してコピーしてください。');
+        });
+    }
+</script>
+
+</body>
+</html>
